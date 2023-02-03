@@ -38,7 +38,7 @@ export function useStandardWalletAdapters(
     onInvalidate(() => listeners.forEach((destroy) => destroy()));
   });
 
-  return computed<Adapter[]>(() => [
+  return computed<any>(() => [
     ...swaAdapters.value,
     ...adapters.value.filter(({ name }: Adapter) => {
       if (swaAdapters.value.some((swaAdapter) => swaAdapter.name === name)) {
